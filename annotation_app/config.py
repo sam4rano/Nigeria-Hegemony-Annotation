@@ -6,78 +6,25 @@ BASE_DIR = Path(__file__).resolve().parent
 
 DATA_FILE = BASE_DIR / "static" / "annotations.jsonl"
 
+# Nigeria geopolitical zones -> states (all 36 states + Federal Capital Territory)
 REGION_STATE_MAP = {
-    "East": ["West Bengal", "Arunachal Pradesh", "Assam", "Jharkhand", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Sikkim", "Tripura"],
-    "North": ["Uttar Pradesh", "Bihar", "Haryana", "Himachal Pradesh", "Punjab", "Rajasthan", "Uttarakhand", "Jammu and Kashmir", "Ladakh"],
-	"Central": ["Madhya Pradesh", "Chhattisgarh"],
-    "South": ["Andhra Pradesh", "Telangana", "Karnataka", "Kerala", "Tamil Nadu"],
-    "West": ["Maharashtra", "Gujarat", "Goa"]
+    "North West": ["Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Sokoto", "Zamfara"],
+    "North East": ["Adamawa", "Bauchi", "Borno", "Gombe", "Taraba", "Yobe"],
+    "North Central": ["Benue", "Federal Capital Territory", "Kogi", "Kwara", "Nasarawa", "Niger", "Plateau"],
+    "South West": ["Ekiti", "Lagos", "Ogun", "Ondo", "Osun", "Oyo"],
+    "South East": ["Abia", "Anambra", "Ebonyi", "Enugu", "Imo"],
+    "South South": ["Akwa Ibom", "Bayelsa", "Cross River", "Delta", "Edo", "Rivers"],
 }
 
 # Update for pythonanywhere
 # Update this list whenever new annotators are onboarded and should be highlighted in admin.
+# TODO: Add Nigerian annotator usernames here as they are onboarded.
 ONBOARDED_ANNOTATOR_USERNAMES = [
 	"admin",
-	"Arnab6203",
-	"nishtharajput",
-	"Manasikelkar26",
-	"Riddhi Vora",
-	"Ajit Rana",
-	"Priyanka",
-	"Riddhi157",
-	"tauseef",
-	"Aishwarya Gadgil",
-	"Ashish",
-	"Manshi Patel",
-	"Veera Hymavathi Sirisipalli",
-	"Subham48",
-	"Lila Ghimire",
-	"neerav",
-	"Sohail Khan",
-	"Adya",
-	"kameshwari04",
-	"Manorath Thacker",
-	"Payal",
-	"hareeshreji",
-	"Akhlaqur@12345",
-	"binduhemant",
-	"Gayathri",
-	"Sylesh",
-	"Som_Shikhar",
-	"PallaviBeauvoir",
-	"Palak_Shah",
 ]
 
 ONBOARDED_ANNOTATOR_USERNAMES_STATES = {
-	"admin": "Uttar Pradesh",
-	"Arnab6203": "West Bengal",
-	"nishtharajput": "Haryana",
-	"Manasikelkar26": "Maharashtra",
-	"Riddhi Vora": "Gujarat",
-	"Ajit Rana": "Haryana",
-	"Priyanka": "Haryana",
-	"Riddhi157": "Maharashtra",
-	"tauseef": "Bihar",
-	"Aishwarya Gadgil": "Maharashtra",
-	"Ashish": "Jammu and Kashmir",
-	"Manshi Patel": "Uttar Pradesh",
-	"Veera Hymavathi Sirisipalli": "Andhra Pradesh",
-	"Subham48": "West Bengal",
-	"Lila Ghimire": "West Bengal",
-	"neerav": "Uttar Pradesh",
-	"Sohail Khan": "Jammu and Kashmir",
-	"Adya": "Kerala",
-	"kameshwari04": "Bihar",
-	"Manorath Thacker": "Gujarat",
-	"Payal": "Odisha",
-	"hareeshreji": "Kerala",
-	"Akhlaqur@12345": "Bihar",
-	"binduhemant": "Andhra Pradesh",
-	"Gayathri": "Andhra Pradesh",
-	"Sylesh": "Andhra Pradesh",
-	"Som_Shikhar": "Odisha",
-	"PallaviBeauvoir": "Odisha",
-	"Palak_Shah" : "Gujarat"
+	"admin": "Federal Capital Territory",
 }
 
 HEGEMONY_AXES = [

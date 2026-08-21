@@ -1,6 +1,6 @@
 import json
-from google import genai
-from google.genai import types
+# from google import genai  # unused - Gemini now via OpenRouter (was causing ImportError)
+# from google.genai import types
 from config import KEYS
 from openai import OpenAI
 import requests
@@ -61,7 +61,9 @@ def generate_gemini_output(prompt: str) -> str:
                     "role": "user",
                     "content": prompt
                 }
-            ]
+            ],
+            "max_tokens": 400,
+            "temperature": 0.8
         })
     )
 
@@ -105,6 +107,7 @@ def generate_deepseek_output(prompt: str) -> str:
                     "content": prompt
                 }
             ],
+            "max_tokens": 400,
             "reasoning": {"enabled": True}
         })
     )
@@ -124,8 +127,8 @@ def generate_llama_output(prompt: str) -> str:
         "Content-Type": "application/json",
     },
     data=json.dumps({
-        "model": "openai/gpt-oss-120b",
-        "messages": [
+            "model": "openai/gpt-oss-120b",
+            "messages": [
                 {
                     "role": "system",
                     "content": "Answer in no more than 150 words in English."
@@ -135,8 +138,9 @@ def generate_llama_output(prompt: str) -> str:
                     "content": prompt
                 }
             ],
-        "reasoning": {"enabled": True}
-    })
+            "max_tokens": 400,
+            "reasoning": {"enabled": True}
+        })
     )
     response = response.json()
     response = response['choices'][0]['message']['content']
